@@ -32,6 +32,8 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
-    Route::get('/home', 'HomeController@index');
+    // Route::get('/home', 'HomeController@index');
+    Route::get('/cars', 'CarsController@index');
+	Route::get('/cars/getaddcar', 'CarsController@postCars');
+	Route::post('/cars/postAddCar', 'CarsController@postAddCar');
 });

@@ -28,7 +28,8 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $loginPath = '/login';
+    protected $redirectPath = '/cars';
 
     /**
      * Create a new authentication controller instance.
@@ -37,7 +38,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        // $this->middleware('guest', ['except' => 'logout']);
     }
 
     /**
@@ -53,6 +54,12 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
+    }
+
+    public function authenticate() {
+        if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
+            return redirect()->intended('cars');
+        }
     }
 
     /**
