@@ -55,7 +55,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'mysql://b05da316deb24b:096bb3e4'),
-            'database'  => env('DB_DATABASE', 'homestead'),
+            'database'  => env('DB_DATABASE', 'heroku_093b707d326c890'),
             'username'  => env('DB_USERNAME', 'us-cdbr-iron-east-03.cleardb.net'),
             'password'  => env('DB_PASSWORD', 'heroku_093b707d326c890'),
             'charset'   => 'utf8',
@@ -67,10 +67,11 @@ return [
 
         'pgsql' => [
             'driver'   => 'pgsql',
-            'host'     => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host'     => env('DB_HOST', 'ec2-54-83-56-31.compute-1.amazonaws.com'),
+            'port'     => '5432',
+            'database' => env('DB_DATABASE', 'd7h4msksdbjjqi'),
+            'username' => env('DB_USERNAME', 'vtjnyuoicugzkj'),
+            'password' => env('DB_PASSWORD', 'pm09B1YicYw2odgBhWpbSa3_rO'),
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',
